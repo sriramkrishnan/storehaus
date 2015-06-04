@@ -56,7 +56,7 @@ object StorehausBuild extends Build {
     crossScalaVersions := Seq("2.10.5"),
     javacOptions ++= Seq("-source", "1.6", "-target", "1.6"),
     javacOptions in doc := Seq("-source", "1.6"),
-    libraryDependencies += "org.scalatest" %% "scalatest" % scalatestVersion % "test",
+    libraryDependencies += "org.scalatest" % "scalatest_2.10" % scalatestVersion % "test",
     resolvers ++= Seq(
       Opts.resolver.sonatypeSnapshots,
       Opts.resolver.sonatypeReleases,
@@ -291,7 +291,7 @@ object StorehausBuild extends Build {
       name := "storehaus-testing",
       previousArtifact := youngestForwardCompatible("testing"),
       libraryDependencies ++= Seq(
-        "org.scalacheck" %% "scalacheck" % "1.10.0" withSources(),
+        "org.scalacheck" % "scalacheck_2.10" % "1.10.0" withSources(),
         withCross("com.twitter" %% "util-core" % utilVersion)
       )
     )
